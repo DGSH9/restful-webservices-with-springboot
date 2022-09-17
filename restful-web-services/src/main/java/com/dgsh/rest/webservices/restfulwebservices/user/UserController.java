@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import jakarta.validation.Valid;
+
 @RestController
 public class UserController {
 	
@@ -40,7 +42,7 @@ public class UserController {
 	}
 	
 	@PostMapping("/users")
-	public ResponseEntity<User> creatUser(@RequestBody User user) {
+	public ResponseEntity<User> creatUser(@Valid @RequestBody User user) {
 		 userDao.createUser(user);
 		 
 		 URI location = ServletUriComponentsBuilder.fromCurrentRequest()
