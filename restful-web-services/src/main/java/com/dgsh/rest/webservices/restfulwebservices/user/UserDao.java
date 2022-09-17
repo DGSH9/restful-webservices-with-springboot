@@ -32,7 +32,7 @@ public class UserDao {
 	
 	public User findOne(int id) {
 		//stream and lambda
-		 return list1.stream().filter(e->e.getId().equals(id)).findFirst().get();
+		 return list1.stream().filter(e->e.getId().equals(id)).findFirst().orElse(null);
 		
 		//old way
 		//User user1  = null;

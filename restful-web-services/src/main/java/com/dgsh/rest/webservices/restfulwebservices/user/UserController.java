@@ -1,6 +1,7 @@
 package com.dgsh.rest.webservices.restfulwebservices.user;
 
 import java.net.URI;
+import java.nio.file.attribute.UserPrincipalNotFoundException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,11 @@ public class UserController {
 	
 	@GetMapping("/users/{id}")
 	public User findOne(@PathVariable("id") int id) {
-		return userDao.findOne(id);
+		User user = userDao.findOne(id);
+		if(user==null) {
+			throw new UserNotFoundException("id: " + id);
+		}
+		return user;
 	}
 	
 	@PostMapping("/users")
