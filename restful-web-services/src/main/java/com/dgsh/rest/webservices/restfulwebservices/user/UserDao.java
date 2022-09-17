@@ -43,5 +43,14 @@ public class UserDao {
 		//}
 		//return user1;
 	}
+
+	
+	public void deleteOne(int id) {
+		//stream and lambda
+		Predicate<? super User> predicate = e->e.getId().equals(id);
+		list1.stream().filter(predicate).findFirst().orElse(null);
+		list1.removeIf(predicate);
+	}
+
 	
 }
