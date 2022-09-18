@@ -25,6 +25,12 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		
+		<!-- HAL Explorer-->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-rest-hal-explorer</artifactId>
+		</dependency>
+		
 		<!-- ACTUATOR-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
