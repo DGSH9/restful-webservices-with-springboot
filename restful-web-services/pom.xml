@@ -25,6 +25,12 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		
+		<!-- ACTUATOR-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		
 		<!-- HATEOAS-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
